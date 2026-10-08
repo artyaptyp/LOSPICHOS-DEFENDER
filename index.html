@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>PICHOSdefender Scanner</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">
+            LOS<span>DEFENDER</span>
+        </div>
+
+        <div class="nav-status">
+            ● analisador online
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <section class="hero">
+
+            <div class="badge">
+                LOS PICHOS DEFENDER 
+            </div>
+
+            <h1>
+                TESTE qualquer URL.
+                <br>
+                <span>Descubra se ela é toperamente segura.</span>
+            </h1>
+
+            <p>
+                Verifique reputação, HTTPS, DNS, SSL/TLS,
+                headers e indicadores suspeitos.
+            </p>
+
+
+            <div class="search-box">
+
+                <input
+                    id="urlInput"
+                    type="text"
+                    placeholder="https://example.com"
+                    autocomplete="off"
+                >
+
+                <button
+                    id="scanButton"
+                    onclick="scanWebsite()"
+                >
+                    SCAN
+                </button>
+
+            </div>
+
+            <div id="error"></div>
+
+        </section>
+
+
+        <section
+            id="loading"
+            class="loading hidden"
+        >
+
+            <div class="spinner"></div>
+
+            <h2>
+                Analisando website...
+            </h2>
+
+            <p>
+                Executando múltiplas verificações.
+            </p>
+
+        </section>
+
+
+        <section
+            id="results"
+            class="results hidden"
+        >
+
+            <div class="result-header">
+
+                <div>
+
+                    <small>
+                        RESULTADO DA ANALISE PARA:
+                    </small>
+
+                    <h2 id="scannedUrl">
+                        —
+                    </h2>
+
+                </div>
+
+                <div
+                    id="overallStatus"
+                    class="overall clean"
+                >
+                    CLEAN
+                </div>
+
+            </div>
+
+
+            <div class="stats">
+
+                <div class="stat">
+
+                    <strong id="cleanCount">
+                        0
+                    </strong>
+
+                    <span>
+                        Clean
+                    </span>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <strong id="warningCount">
+                        0
+                    </strong>
+
+                    <span>
+                        Warnings
+                    </span>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <strong id="dangerCount">
+                        0
+                    </strong>
+
+                    <span>
+                        Detections
+                    </span>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <strong id="totalCount">
+                        0
+                    </strong>
+
+                    <span>
+                        Engines
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="engine-list" id="engineList"></div>
+
+
+            <div
+                id="details"
+                class="details hidden"
+            >
+
+                <h3>
+                    DETALHES DA ANALISE
+                </h3>
+
+                <pre id="detailsContent"></pre>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        LOS PICHOS DEFENDER · LUGAR ONDE A SEGURANÇA É LEI · 2024
+
+    </footer>
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
